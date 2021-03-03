@@ -1,0 +1,9 @@
+关于如何python如何调用C函数，主要看guidedfilter.cpp文件后面
+利用下面的命令或者自己写cmake文件编译成库
+
+g++ -fPIC -shared test1.cpp -I/home/rush/anaconda3/envs/py36/include/python3.6m  -o guidedfilter.so -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc -Wl,-rpath /usr/local/lib
+
+得到guidedfilter.so
+
+然后，在python 文件main.py中可以看到，直接import guidedfilter就可以使用你自己编译的库了
+
